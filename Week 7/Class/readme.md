@@ -6,12 +6,9 @@
 > Structural typing
 > fresh and stale objects
 > 
-```typescript
-var doOrNo = "DO YES";
-```
 
 ```javascript
-var s = "JavaScript syntax highlighting";
+var s = "TypeScript syntax highlighting";
 alert(s);
 ```
 
