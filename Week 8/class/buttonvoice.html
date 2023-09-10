@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+margin: 0;
+padding: 0;
+border: none;
+box-sizing: border-box;
+-webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+height: 100%;
+}
+
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+background: #dff0f6;
+}
+
+button {
+font-family: 'Open Sans', sans-serif;
+font-size: 1.5rem;
+color: #fff;
+background: #034d85;
+padding: 1.1rem 3.4rem;
+border-radius: .2rem;
+transition: opacity .2s;
+}
+
+button:hover {
+cursor: pointer;
+background: #053056;
+}
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        var audio = new Audio("http://music.ogg");
+        
+        audio.oncanplaythrough = function(){
+        audio.play();
+        }
+        
+        audio.loop = true;
+        
+        audio.onended = function(){
+        audio.play();
+        }
+        
+
+        const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    audio.play();
+  });
+});
+        </script>
+        
+        <input type="image" src="logo.png" onclick="audio.play()">
+</body>
+</html>
+
+
+
+
+
+<button>Click me!</button>
+
+
+<audio id="myAudio">
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+</audio>
+
+
+<button onclick="playAudio()" type="button">Start Audio</button>
+<button onclick="pauseAudio()" type="button">Stop</button> 
+
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+
+</body>
+</html>
+
+
+
+
