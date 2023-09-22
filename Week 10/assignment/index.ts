@@ -1,172 +1,311 @@
+//// Class 09 and 10 Assignment# 1
+// arrays and methods
 
+// push: adding index to the last
+let push = [1, 2, 3];
+console.log("Before push: ", push); // 1, 2, 3
+push.push(4); // 1, 2, 3, 4
 
-// function task01(task3: () => void){
-//     console.log("do Task 01");
-//     task3();
-// }
+console.log("After push: ", push); // 1, 2, 3, 4
 
-// function task02(){
-//     console.log("do Task 02");
-// }
+// pop: removing last index
 
-// function task03(): any{
-//     console.log("do Task 03");
-// }
+let pop = [1, 2, 3];
+console.log("Before pop: ", pop); // 1, 2, 3
+pop.pop(); // 1, 2
 
+console.log("After pop: ", pop); // 1, 2
 
-// let task4: any = setTimeout( () => {
-//     function task04(): any{
-//         console.log("do Task 04");
-//     }
-//     task04();
-// }, 1000
-// )
+// shift: removing first index
+let shift = [1, 2, 3];
+console.log("Before shift: ", shift); // 1, 2, 3
 
-// task01(task03()); // passing task03 as a parameter of task01
-// task01(task4); // passing task03 as a parameter of task01
+shift.shift(); // 2, 3
+console.log("Afer shift: ", shift); // 2, 3
 
+// unshift: adding to the first index
+let unshift = [1, 2, 3, 4];
+console.log("Before unshift: ", unshift);
 
-// **************************************************
+unshift.unshift(0); // 0, 1, 2, 3, 4
 
+console.log("After unshift: ", unshift);
 
+// concat: adding string to the last index
 
+let concat = ["a", "b", "c"];
+console.log("Before concat", concat);
 
+let concated = concat.concat("d"); // a, b, c, d
+console.log("After concat: ", concated);
 
-// function task1(anyfunction: any) {
-//     console.log("1: 1 do something");
-//     anyfunction("2: 3 passing values to callback");
-// }
+let concat1 = [1, 2, 3, 4];
+let cont = concat1.concat(67);
+console.log(cont);
 
-// task1(function secondtask(text: string) {
-//     console.log("3: 2 callback function.. ", text);
-// })
+// join: joins with anything to anything
 
+let join = ["1", "2", "3", "4"];
+console.log("Before join: ", join);
 
+let joined = join.join("-");
+console.log("Afer Join: ", joined);
+console.log("After joining: ", join.join(" or "));
 
-// function t1(t2: any){
-//     console.log("t1");
-//     t2;
-// }
+let join1 = [1, 2, 3, 4];
+console.log("Before join1:  ", join1);
 
-// function t2(t1: any){
-//     console.log("t2");
-//     t1;
-// }
+let joined1 = join1.join("-");
+console.log("Afer Join1:  ", joined1);
 
-// t1(t2("2t"));
+const elements = ["Fire", "Air", "Water"];
 
-// t2(t1("1t"));
+console.log(elements.join()); // Fire,Air,Water
 
+console.log(elements.join("")); // FireAirWater
 
-// t2(
-//     t1(
-//         t2("2t")
-//     )
-// )
+console.log(elements.join("-")); // Fire-Air-Water
 
-// t2(
-//     function t1(t2: any){
-//         console.log("t1");
-//         t2;
-//     }
-// )
+console.log(elements.join(" or ")); // Fire-Air-Water
 
+// slicing:
 
+let slice = [1, 2, 3, 4];
+console.log("Slice: ", slice);
 
+console.log("Sliced after 3: ", slice.slice(3));
+console.log("Sliced after 2: ", slice.slice(2));
+console.log("Sliced after 1: ", slice.slice(1));
+console.log("Sliced after 2,3: ", slice.slice(2, 3)); // start, end
+console.log("Sliced after 1,3: ", slice.slice(1, 3)); // start, end
 
+let slicing = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("Before slicing: ", slicing);
 
-// ***********************************************************
+let sliced = slicing.slice(2, 5);
+console.log("After slicing 2, 5: ", sliced);
 
+let sliced2 = slicing.slice(2) && slicing.slice(5, 8).slice(2, 6);
 
-// function task1a(task2aCalled: any) {
-//     console.log("0: do something else :3"); // run3
-//     task2aCalled("1: task2aCalled variable text");
-// }
-// function task2a(task1aCalled: any) {
-//     console.log("2: do callback :1", task1aCalled); // run1 , run2
-//     task1aCalled;
-// }
+console.log("After slicing 2: ", sliced2);
 
-// task1a(task2a("3: task1aCalled variable text :2")); // run2  stores in task1aCalled
+// slicing of string/char
 
+let charSlice: string[] = ["a", "b", "c", "d", "e", "f", "g"];
+console.log("before slicing: ", charSlice);
 
+console.log('After slicing "c": ', charSlice.slice());
 
+// ========================================================
 
-// ***************************************************************
+// indexOf: to find index of element
 
-// function myDisplayer(some: any) {
-//     console.log(some);
-//   }
+let indexOf = [1, 2, 3, 4, 5, 6, 7];
+console.log("IndexOf 4 is: ", indexOf.indexOf(4));
 
-// function myFirst() {
-//     myDisplayer("Hello");
-//   }
+let char = ["a", "b", "c", "d"];
+console.log('IndexOf "b" is: ', char.indexOf("b"));
 
-//   function mySecond() {
-//     myDisplayer("Goodbye");
-//   }
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// includes: to find if particular elemet exist or not in array
 
-//   myFirst();
-//   mySecond();
+console.log('let\'s find "c" is exist or not: ', char.includes("c"));
+console.log('let\'s find "a" is exist or not: ', char.includes("a"));
+console.log('let\'s find "y" is exist or not: ', char.includes("y"));
 
+// ========================================
+// every: it tells us that are all the elements true for specified condition
 
-//   function myCalculator(num1:number, num2:number) {
-//     let sum = num1 + num2;
-//     return sum;
-//   }
+let Arr = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log("Array having 1 to 8", Arr);
+console.log(
+  "are all elements less than 10: ",
+  Arr.every((x) => x < 10)
+);
+console.log(
+  "are all elements greater than 0: ",
+  Arr.every((x) => x > 0)
+);
+console.log(
+  "are ",
+  Arr.every((Arr) => Arr)
+);
+console.log(
+  "are all elements less then 0: ",
+  Arr.every((b) => b < 0)
+);
 
-//   let result = myCalculator(5, 5);
-//   myDisplayer(result); 
+// ========================================
+// some: finding if some elements falls under specific/defined condition
 
+console.log(
+  "Checking for elements if some of them are below 5: ",
+  Arr.some((x) => x < 5)
+);
+console.log(
+  "Checking for elements if some of them are above 5: ",
+  Arr.some((x) => x > 5)
+);
+console.log(
+  "Checking for elements if some of them are below 0: ",
+  Arr.some((x) => x < 0)
+);
+console.log(
+  "Checking for elements if some of them are above 10: ",
+  Arr.some((x) => x > 10)
+);
 
+// ==========================================
+// at:
 
-// function myDisplayer(anyfunc: any) {
-//     console.log(anyfunc);
-// }
+let arr1 = [1, 2, 3, 4, 5, 6, 7];
 
-// function myCalculator(num1: number, num2: number, myCallback: any) {
-//     let sum = num1 + num2;
-//     myCallback(sum);
-// }
+console.log("finding ", arr1.at(-2));
 
-// myCalculator(5, 5, myDisplayer);
+// ========================================
+// reverse
+console.log("Reversing of elements: ", arr1.reverse());
+let arrNum = [1, 23, 46, 5, 7, 9, 12, 57, 86, 87, 99, 101];
+console.log("Arranging in Descending order: ", arrNum.reverse());
 
-// setTimeout(function () {
-//     myCalculator(5, 5, myDisplayer);
-// }, 10)
+let arr2 = ["a", "b", "c", "d"];
+console.log("Reversing of elements: ", arr2.reverse());
 
+let arr3 = ["a", "b", "c", "d", "p", "q", "r", "s", "x", "y", "z"];
+console.log("Arranging: Reversing of elements: ", arr3.reverse());
 
+let arr4 = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "p",
+  "q",
+  "r",
+  "s",
+  "x",
+  "y",
+  "z",
+  1,
+  23,
+  46,
+  5,
+  7,
+  9,
+  12,
+  57,
+  86,
+  87,
+  99,
+  101,
+];
+console.log("Let me arrange alphaNumeric elements: ", arr4.reverse());
+// =========================================
+// filter: filtering elements
 
+let arr11 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(
+  "Finding all even num: ",
+  arr11.filter((y) => y % 2 == 0)
+);
 
+console.log(
+  "Finding all odd num: ",
+  arr11.filter((y) => y % 2 == 1)
+);
 
+// =================================================
+// find: returns first element if condition met
 
+let findArr = [1, 2, 3, 4, 5, 6, 7, 8];
 
-// =========*********************************=========
+console.log(
+  "first number before 4 in array is: ",
+  findArr.find((x) => (x < 4 ? "good" : "bad"))
+);
 
-function carMaintenance() {
-    console.log("I leave my car at 9 in workshop");
+console.log(
+  "first number after 4 is: ",
+  findArr.find((x) => x > 4)
+);
 
-    setTimeout(() => {
-        console.log("Car is fixed...");
-        return "Your car is ready"
-    }, 2000);
-}
+console.log(
+  "first even number in array is: ",
+  findArr.find((x) => x % 2 == 0)
+);
 
-function pickDress() {
-    setTimeout(() => {
-        return "Your Dress is ready"
-    }, 100);
-}
+console.log(
+  "first even number in array is: ",
+  findArr.find((x) => x % 2 == 1)
+);
 
-let mechanicResponse = carMaintenance();
-console.log("mechanicResponse... ", mechanicResponse);
-setTimeout(() => {
-    console.log("Do grocery");
-}, 0);
-let laundryResponse = pickDress();
-console.log("laundryResponse ...", laundryResponse);
-setTimeout(() => {
-    console.log("Attend Event");
-}, 2000);
+let findArr1 = [3, 4, 6, 7, 9];
+console.log(
+  "first even number in array[3, 4, 6, 7, 9] is: ",
+  findArr1.find((y) => y % 2 == 0)
+);
 
+// ============================
 
+// reduce: used to apply for a function against two values to reduce and make it one value
+
+let newArr = [1, 2, 5, 3, 7, 8];
+
+console.log(
+  "reduce method [1, 2, 5, 3, 7, 8] adds all",
+  newArr.reduce((x, y) => x + y)
+);
+
+console.log(
+  "reduce method [1, 2, 5, 3, 7, 8] minus all",
+  newArr.reduce((x, y) => x - y)
+);
+
+console.log(
+  "reduce method [1, 2, 5, 3, 7, 8] mul all",
+  newArr.reduce((x, y) => x * y)
+);
+
+console.log(
+  "reduce method [1, 2, 5, 3, 7, 8] div all",
+  newArr.reduce((x, y) => x / y)
+);
+
+// etc
+
+////////////////////////////////
+
+// map
+
+let mapArr = [3, 4, 6, 8, 9];
+console.log(
+  "map method to multiply all elements with any number, let say 3:",
+  mapArr.map((x) => x * 3)
+);
+
+console.log(
+  "add 2 to all ele:",
+  mapArr.map((x) => x + 2)
+);
+
+console.log(
+  "div with 2 of all ele:",
+  mapArr.map((x) => x / 2)
+);
+
+console.log(
+  "mul with 2 of all ele:",
+  mapArr.map((x) => x * 2)
+);
+// etc
+
+////////////////////////////////////////////
+
+// findIndex
+
+let findInd = [2, 3, 6, 7, 9];
+let findInd1 = [2, 4, 3, 5];
+console.log(
+  "findIndex: ",
+  findInd1.findIndex((x) => x % 2 !== 0)
+);
